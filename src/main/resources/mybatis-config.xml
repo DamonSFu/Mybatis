@@ -46,5 +46,9 @@
     <!--  注册项目中mapper.xml配置文件  -->
     <mappers>
         <mapper resource="com/baizhi/mapper/UserDAO.xml"/>
+        <!--身份信息-->
+        <mapper resource="com/baizhi/mapper/InfoDAO.xml"/>
+        <!--用户信息-->
+        <mapper resource="com/baizhi/mapper/PersonDAO.xml"/>
     </mappers>
 </configuration>

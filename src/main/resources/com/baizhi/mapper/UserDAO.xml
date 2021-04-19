@@ -67,10 +67,6 @@
         <include refid="userQuery" />
     </select>
 
-<!--    <select id="queryAll" resultType="com.baizhi.entity.User">-->
-<!--        <include refid="userQuery" />&lt;!&ndash;include：包含哪个sql片段 refid；包含片段的id&ndash;&gt;-->
-<!--    </select>-->
-
     <!--根据ID查询一个用户-->
     <select id="queryById" parameterType="Integer" resultType="com.baizhi.entity.User">
         <include refid="userQuery" />
@@ -80,10 +76,6 @@
     <!--根据名字模糊查询-->
     <select id="queryLikeByName" parameterType="String" resultType="com.baizhi.entity.User">
         <include refid="userQuery" />
-            <!--
-                oracle: '%'||#{name}||'%'
-                mysql: concat('%',#{name},'%')
-            -->
             where name like concat('%',#{name},'%')
     </select>
 

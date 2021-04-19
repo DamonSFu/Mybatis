@@ -56,15 +56,16 @@
 
     <!--结果映射 id:resultMap标签起一个唯一标识 Type：指定封装对象的类型-->
     <resultMap id="userResultMap" type="com.baizhi.entity.User">
-
+        <!--主键封装：id标签-->
+        <id column="id" property="id" />
+        <!--普通列 result-->
+        <result column="uname" property="name" />
+        <result column="age" property="age" />
+        <result column="bir" property="bir" />
     </resultMap>
     <select id="queryAll" resultMap="userResultMap">
         <include refid="userQuery" />
     </select>
-
-<!--    <select id="queryAll" resultType="com.baizhi.entity.User">-->
-<!--        <include refid="userQuery" />&lt;!&ndash;include：包含哪个sql片段 refid；包含片段的id&ndash;&gt;-->
-<!--    </select>-->
 
     <!--根据ID查询一个用户-->
     <select id="queryById" parameterType="Integer" resultType="com.baizhi.entity.User">
@@ -75,10 +76,6 @@
     <!--根据名字模糊查询-->
     <select id="queryLikeByName" parameterType="String" resultType="com.baizhi.entity.User">
         <include refid="userQuery" />
-            <!--
-                oracle: '%'||#{name}||'%'
-                mysql: concat('%',#{name},'%')
-            -->
             where name like concat('%',#{name},'%')
     </select>
 
