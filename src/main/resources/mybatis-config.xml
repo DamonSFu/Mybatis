@@ -50,5 +50,11 @@
         <mapper resource="com/baizhi/mapper/InfoDAO.xml"/>
         <!--用户信息-->
         <mapper resource="com/baizhi/mapper/PersonDAO.xml"/>
+        <!--部门信息-->
+        <mapper resource="com/baizhi/mapper/DeptDAO.xml"/>
+        <!--员工信息-->
+        <mapper resource="com/baizhi/mapper/EmpDAO.xml"/>
+        <!--学生信息-->
+        <mapper resource="com/baizhi/mapper/StudentDAO.xml"/>
     </mappers>
 </configuration>
